@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Issue shares on property</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <p>
+    Issue shares for property after entering details below.
+    </p>
+	
+<ion-list>
+<ion-list-header color="light">
+  Property details
+</ion-list-header>
+
+
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="property.title" placeholder="Enter title of property"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-textarea  [(ngModel)]="property.propertydesc" placeholder="Enter description of property"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-input type="number" [(ngModel)]="property.marketvalue" placeholder="Market value in numbers"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="number" [(ngModel)]="property.stocks" placeholder="Number of stocks to issue"></ion-input>
+  </ion-item>
+  
+  <ion-item-divider color="light">
+  Property owner details
+</ion-item-divider>
+
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="property.propertyowner" placeholder="Enter property owner name"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="property.propertyownerid" placeholder="Enter owner id"></ion-input>
+  </ion-item>
+  
+  
+ </ion-list>
+<button ion-button round  (click)='createProperty()'>Save and Issue shares </button>
+
+    <!-- label class="label">Name: </label>
+
+    <ion-input placeholder="Item Title" class="input"
+    [(ngModel)]="item.title"
+    required minlength="2" maxlength="23"
+    #title='ngModel' autofocus>
+
+
+
+    <button class="button is-primary" (click)='createItem()' [disabled]="!title.valid">Create</button>
+
+
+
+<div *ngFor="let item of items " class="card">
+  {{item.title}}
+</div -->
+
+
+
+   
+  
+</ion-content>

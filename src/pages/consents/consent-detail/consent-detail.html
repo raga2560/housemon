@@ -1,0 +1,131 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{consent?.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="consent-detail">
+  <div text-center *ngIf="consent">
+    <!--img [src]="consent.profilePic" [alt]="consent.name" --><br>
+
+	<ion-item > 
+		    
+		1)  <a href="#/tab/home" > Home </a>
+		2)  <a href="#/tab/consents" > Go to deals </a> 
+		
+	</ion-item >
+	
+	
+	
+  <div class = "card">
+   <a class="item item-thumbnail-left" href="#">
+   <!-- img [src] = "images/Jellyfish.jpg"  -->
+      <p> {{consent.data.title}} </p>
+      
+      
+    </a>
+	
+	<!--div class = "item item-body">
+      <img class = "full-image" [src]="{{consent.data.uploadedimage}}">
+      {{consent.data.description}} 
+   </div -->
+   
+  
+  <a class="item item-icon-left" href="{{consent.data.uploadedpdf}}" >
+				<span >
+					<i class="icon ion-document balanced"></i>
+					<span>PDF</span>
+					MD5<span> {{consent.data.pdfhash}}</span>
+				</span>
+	</a>
+	
+   <a class="item item-icon-left" (click)="vm.SentConsent(vm.consentId)" *ngIf="consent.data.consented=='draft' && vm.uid == consent.data.creatorid">
+				<span >
+					<i class="icon ion-forward balanced"></i>
+					<span>Send deal for consent</span>
+				</span>
+	</a>
+	<a class="item item-icon-left"  *ngIf="consent.data.consented=='sent' && vm.uid == consent.data.creatorid">
+				<span >
+					<i class="icon ion-person balanced"></i>
+					<span>Deal waiting response</span>
+				</span>
+	</a>
+	
+	<a class="item item-icon-left" (click)="vm.EditConsentDetails(vm.consentId)" *ngIf="consent.data.consented=='draft' && vm.uid == consent.data.creatorid">
+				<span >
+					<i class="icon ion-edit calm"></i>
+					<span>Edit the deal</span>
+				</span>
+	</a>
+	
+	<a class="item item-icon-left" (click)="vm.AcceptConsent(vm.consentId)" *ngIf="consent.data.consented=='sent' && vm.uid == consent.data.consentorid">
+				<span >
+					<i class="icon ion-thumbsup balanced"></i>
+					<span>Agree to deal</span>
+				</span>
+	</a>
+	<a class="item item-icon-left" (click)="vm.RefuseConsent(vm.consentId)" *ngIf="consent.data.consented=='sent' && vm.uid == consent.data.consentorid">
+				<span >
+					<i class="icon ion-thumbsdown assertive"></i>
+					<span>Refuse the deal</span>
+				</span>
+	</a>
+	<div class="item item-icon-left" >
+	<span *ngIf="consent.data.consented=='accepted'">
+					<i class="icon icon-left ion-thumbsup balanced"></i>
+					<span>Agreed </span>
+				</span>
+	</div>
+	<div class="item item-icon-left" >
+	<span *ngIf="consent.data.consented=='refused'">
+					<i class="icon icon-left ion-thumbsup assertive"></i>
+					<span>Refused </span>
+				</span>
+	</div>
+	<ion-item>
+	<button class="button button-small button-assertive"
+					(click)="vm.deleteDeal(vm.consentId)"
+					*ngIf="consent.data.consented=='draft' && vm.uid == consent.data.creatorid"
+					>
+					Delete deal draft
+	</button>
+	</ion-item>
+	
+			
+  </div>
+  
+  <div class="list card">
+			<a href={{consent.data.consentpdf}} class="item item-icon-left">
+				<i class="icon ion-document"></i>
+				PDF document
+			</a>
+			
+			<a class="item item-icon-left" href="#">
+				<i class="icon ion-email"></i>
+				{{consent.data.consentoremail}}
+			</a>
+			
+			<a href="tel:{{consent.data.phoneNumber}}" class="item item-icon-left">
+				<i class="icon ion-ios-telephone"></i>
+				Phone
+			</a>
+	</div>
+  
+  
+    <button ion-button icon-only clear small color="twitter">
+      <ion-icon name="logo-twitter"></ion-icon>
+    </button>
+    <button ion-button icon-only clear small color="github">
+      <ion-icon name="logo-github"></ion-icon>
+    </button>
+    <button ion-button icon-only clear small color="instagram">
+      <ion-icon name="logo-instagram"></ion-icon>
+    </button>
+  </div>
+
+  
+</ion-content>
+
+

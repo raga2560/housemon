@@ -8,6 +8,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { IonicStorageModule } from '@ionic/storage';
+import { DirectivesModule } from '../directives/directives.module';
 
 import { ConferenceApp } from './app.component';
 
@@ -20,6 +21,7 @@ import { SchedulePage } from '../pages/schedule/schedule';
 import { ScheduleFilterPage } from '../pages/schedule-filter/schedule-filter';
 import { SessionDetailPage } from '../pages/session-detail/session-detail';
 import { HomeOwnerAccountPage } from '../pages/homeowner-account/homeowner-account';
+import { TradePanelPage } from '../pages/tradepanel/tradepanel';
 import { ShareOwnerAccountPage } from '../pages/shareowner-account/shareowner-account';
 import { SignupPage } from '../pages/signup/signup';
 import { PropertyDetailPage } from '../pages/property-detail/property-detail';
@@ -66,6 +68,7 @@ import { UserData } from '../providers/user-data';
     PropertyListPage,
 	HomeOwnerAccountPage,
 	ShareOwnerAccountPage,
+	TradePanelPage,
     TabsPage,
     TutorialPage,
 //	ItemsListComponent,
@@ -77,6 +80,7 @@ import { UserData } from '../providers/user-data';
     HttpModule,
 	ItemModule,
 	ConsentModule,
+	DirectivesModule,
 	CoreModule,
 	SharedModule,
 //	IonicPageModule.forChild(ItemsListComponent),
@@ -87,6 +91,7 @@ import { UserData } from '../providers/user-data';
         { component: SchedulePage, name: 'Schedule', segment: 'schedule' },
         { component: SessionDetailPage, name: 'SessionDetail', segment: 'sessionDetail/:sessionId' },
 		{ component: HomeOwnerAccountPage, name: 'HomeOwnerAccount', segment: 'homeowneraccount' },
+		{ component: TradePanelPage, name: 'TradePanel', segment: 'tradepanel' },
 		{ component: ShareOwnerAccountPage, name: 'ShareOwnerAccount', segment: 'shareowneraccount' },
         { component: ScheduleFilterPage, name: 'ScheduleFilter', segment: 'scheduleFilter' },
         { component: PropertyListPage, name: 'PropertyList', segment: 'propertyList' },
@@ -120,6 +125,7 @@ import { UserData } from '../providers/user-data';
     PropertyDetailPage,
     PropertyListPage,
 	HomeOwnerAccountPage,
+	TradePanelPage,
 	ShareOwnerAccountPage,
     TabsPage,
     TutorialPage,

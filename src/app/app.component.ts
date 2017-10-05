@@ -8,6 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Storage } from '@ionic/storage';
 import { HomeOwnerAccountPage } from '../pages/homeowner-account/homeowner-account';
 import { ShareOwnerAccountPage } from '../pages/shareowner-account/shareowner-account';
+import { TradePanelPage } from '../pages/tradepanel/tradepanel';
 
 import { IssueSharePage } from '../pages/issueshare/issueshare';
 import { AccountPage } from '../pages/account/account';
@@ -61,7 +62,7 @@ export class ConferenceApp {
     { title: 'IssueShare', name: 'TabsPage', component: TabsPage, tabComponent: IssueSharePage, index: 3, icon: 'information-circle' },
 	{ title: 'Share owners account', name: 'TabsPage', component: TabsPage, tabComponent: ShareOwnerAccountPage, index: 4, icon: 'map' },
 	
-		{ title: 'Trade Panel', name: 'ItemsPage', component: TabsPage, tabComponent: ItemsListComponent, index: 5, icon: 'stats' }
+		{ title: 'Trade Panel', name: 'TabsPage', component: TabsPage, tabComponent: TradePanelPage, index: 5, icon: 'stats' }
   ];
   loggedInPages: PageInterface[] = [
     { title: 'Account', name: 'AccountPage', component: AccountPage, icon: 'person' },

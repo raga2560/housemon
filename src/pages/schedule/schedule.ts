@@ -26,6 +26,8 @@ export class SchedulePage {
   // the List and not a reference to the element
   @ViewChild('scheduleList', { read: List }) scheduleList: List;
 
+  shouldAnimate: boolean = true;
+  
   dayIndex = 0;
   queryText = '';
   segment = 'all';

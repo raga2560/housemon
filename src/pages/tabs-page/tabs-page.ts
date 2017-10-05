@@ -11,6 +11,7 @@ import { HomeOwnerAccountPage } from '../homeowner-account/homeowner-account';
 import { ShareOwnerAccountPage } from '../shareowner-account/shareowner-account';
 import { ConsentListPage } from '../consents/consent-list/consent-list'  ;
 import { PropertyListPage } from '../property-list/property-list';
+import { TradePanelPage } from '../tradepanel/tradepanel';
 
 
 
@@ -26,7 +27,7 @@ export class TabsPage {
   tab4Root: any = IssueSharePage;
   
   tab5Root: any = ShareOwnerAccountPage;
-  tab6Root: any = ItemsListComponent;
+  tab6Root: any = TradePanelPage;
   mySelectedIndex: number;
 
   constructor(navParams: NavParams) {

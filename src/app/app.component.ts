@@ -27,6 +27,7 @@ import { ConsentListPage } from '../pages/consents/consent-list/consent-list'  ;
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
+import { AuthService } from '../providers/auth.service';
 
 export interface PageInterface {
   title: string;
@@ -71,7 +72,7 @@ export class ConferenceApp {
     { title: 'Logout', name: 'TabsPage', component: TabsPage, icon: 'log-out', logsOut: true }
   ];
   loggedOutPages: PageInterface[] = [
-    { title: 'Login', name: 'LoginPage', component: LoginPage, icon: 'log-in' },
+    // { title: 'Login', name: 'LoginPage', component: LoginPage, icon: 'log-in' },
     { title: 'Support', name: 'SupportPage', component: SupportPage, icon: 'help' },
     { title: 'Signup', name: 'SignupPage', component: SignupPage, icon: 'person-add' }
   ];
@@ -80,6 +81,7 @@ export class ConferenceApp {
   constructor(
     public events: Events,
     public userData: UserData,
+	public auth:  AuthService,
     public menu: MenuController,
     public platform: Platform,
     public confData: ConferenceData,
@@ -152,6 +154,7 @@ export class ConferenceApp {
     });
 
     this.events.subscribe('user:logout', () => {
+		this.auth.signOut();
       this.enableMenu(false);
     });
   }

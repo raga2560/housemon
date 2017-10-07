@@ -35,6 +35,7 @@ import { PropertyService } from '../providers/property.service';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
+import { AuthService } from '../providers/auth.service';
 export const firebaseConfig = environment.firebaseConfig;
 
 // Core
@@ -90,7 +91,7 @@ import { UserData } from '../providers/user-data';
         { component: TabsPage, name: 'TabsPage', segment: 'tabs-page' },
         { component: SchedulePage, name: 'Schedule', segment: 'schedule' },
         { component: SessionDetailPage, name: 'SessionDetail', segment: 'sessionDetail/:sessionId' },
-		{ component: HomeOwnerAccountPage, name: 'HomeOwnerAccount', segment: 'homeowneraccount' },
+		{ component: HomeOwnerAccountPage, name: 'HomeOwnerAccount', segment: 'homeowneraccount	' },
 		{ component: TradePanelPage, name: 'TradePanel', segment: 'tradepanel' },
 		{ component: ShareOwnerAccountPage, name: 'ShareOwnerAccount', segment: 'shareowneraccount' },
         { component: ScheduleFilterPage, name: 'ScheduleFilter', segment: 'scheduleFilter' },
@@ -139,6 +140,7 @@ import { UserData } from '../providers/user-data';
 	ConsentService,
 	ItemService,
 	PropertyService,
+	AuthService,
     InAppBrowser,
     SplashScreen
   ]

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Property } from '../pages/property-shared/property';
 
+
 @Injectable()
 export class PropertyService {
 
@@ -10,7 +11,14 @@ export class PropertyService {
   propertys: FirebaseListObservable<Property[]> ; //= null; //  list of objects
   property: FirebaseObjectObservable<Property> ; // = null; //   single object
 
-  constructor(private db: AngularFireDatabase) { }
+
+  // Thanks to this link https://stackoverflow.com/questions/40293539/is-it-possible-to-reverse-a-firebase-list
+  
+  constructor(private db: AngularFireDatabase) { 
+	this.propertys = this.db.list('/propertys', {
+      query: {}
+    }).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
+  }
 
 
   // Return an observable list with optional query
@@ -18,7 +26,7 @@ export class PropertyService {
   getPropertysList(query = {}): FirebaseListObservable<Property[]> {
     this.propertys = this.db.list('/propertys', {
       query: query
-    });
+    }).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
     return this.propertys
   }
 
@@ -36,6 +44,7 @@ export class PropertyService {
     this.propertys.push(property)
       .catch(error => this.handleError(error))
   }
+
 
 
   // Update an exisiting property

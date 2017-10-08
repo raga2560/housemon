@@ -27,7 +27,7 @@ export class TabsPage {
   tab4Root: any = IssueSharePage;
   
   tab5Root: any = ShareOwnerAccountPage;
-  tab6Root: any = TradePanelPage;
+  
   mySelectedIndex: number;
 
   constructor(navParams: NavParams) {

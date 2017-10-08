@@ -10,7 +10,11 @@ export class TransactionService {
   transactions: FirebaseListObservable<Transaction[]> ; //= null; //  list of objects
   transaction: FirebaseObjectObservable<Transaction> ; // = null; //   single object
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase) { 
+	this.transactions = this.db.list('/transactions', {
+      query: {}
+    });
+  }
 
 
   // Return an observable list with optional query

@@ -56,14 +56,14 @@ export class ConferenceApp {
   // the left menu only works after login
   // the login page disables the left menu
   appPages: PageInterface[] = [
-    { title: 'Watch List', name: 'TabsPage', component: TabsPage, tabComponent: SchedulePage, index: 0, icon: 'calendar' },
-    { title: 'Properties', name: 'TabsPage', component: TabsPage, tabComponent: PropertyListPage, index: 1, icon: 'contacts' },
-    { title: 'Home owners account', name: 'TabsPage', component: TabsPage, tabComponent: HomeOwnerAccountPage, index: 2, icon: 'map' },
+    { title: 'Property Watch List', name: 'TabsPage', component: TabsPage, tabComponent: SchedulePage, index: 0, icon: 'calendar' },
+    { title: 'Property List', name: 'TabsPage', component: TabsPage, tabComponent: PropertyListPage, index: 1, icon: 'contacts' },
+    { title: 'Home Owners Account', name: 'TabsPage', component: TabsPage, tabComponent: HomeOwnerAccountPage, index: 2, icon: 'map' },
 	    
-    { title: 'IssueShare', name: 'TabsPage', component: TabsPage, tabComponent: IssueSharePage, index: 3, icon: 'information-circle' },
-	{ title: 'Share owners account', name: 'TabsPage', component: TabsPage, tabComponent: ShareOwnerAccountPage, index: 4, icon: 'map' },
+    { title: 'Issue Share on Property', name: 'TabsPage', component: TabsPage, tabComponent: IssueSharePage, index: 3, icon: 'information-circle' },
+	{ title: 'Share Owners Account', name: 'TabsPage', component: TabsPage, tabComponent: ShareOwnerAccountPage, index: 4, icon: 'map' }
 	
-		{ title: 'Trade Panel', name: 'TabsPage', component: TabsPage, tabComponent: TradePanelPage, index: 5, icon: 'stats' }
+		// { title: 'Trade Panel', name: 'TabsPage', component: TabsPage, tabComponent: TradePanelPage, index: 5, icon: 'stats' }
   ];
   loggedInPages: PageInterface[] = [
     { title: 'Account', name: 'AccountPage', component: AccountPage, icon: 'person' },

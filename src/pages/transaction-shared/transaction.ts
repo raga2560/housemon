@@ -3,11 +3,11 @@ export class Transaction {
   seller: string;
   buyer: string;
   price: number;
-  transactionid: string;
-  sellerupdated: string;
-  propertyownerid: string;
+  numberofshares :number;
+  blockchaintransactionid: string;
   propertyid:string;
   buyerupdated:string;
+  sellerupdated: string;
   active = true;
   timeStamp: number;
 }

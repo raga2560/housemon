@@ -13,6 +13,8 @@
 </ion-header>
 
 <ion-content padding>
+
+
  <p>
     Issue shares for property after entering details below.
     </p>
@@ -29,6 +31,10 @@
   <ion-item>
     <ion-textarea  [(ngModel)]="property.propertydesc" placeholder="Enter description of property"></ion-textarea>
   </ion-item>
+    <ion-item>
+    <ion-input  type="text" [(ngModel)]="property.propertycode" placeholder="Allot property code"></ion-input>
+  </ion-item>
+
   <ion-item>
     <ion-input type="number" [(ngModel)]="property.marketvalue" placeholder="Market value in numbers"></ion-input>
   </ion-item>
@@ -51,6 +57,8 @@
   
   
  </ion-list>
+ 
+
 <button ion-button round  (click)='createProperty()'>Save and Issue shares </button>
 
     <!-- label class="label">Name: </label>

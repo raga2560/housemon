@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Property } from '../../pages/property-shared/property';
 import { PropertyService } from '../../providers/property.service';
+import { IonicPage, NavParams } from 'ionic-angular';
 
 import {
   ActionSheet,
@@ -15,6 +16,8 @@ import { ConferenceData } from '../../providers/conference-data';
 
 import { SessionDetailPage } from '../session-detail/session-detail';
 import { PropertyDetailPage } from '../property-detail/property-detail';
+import { TradePanelPage } from '../tradepanel/tradepanel';
+
 
 // TODO remove
 export interface ActionSheetButton {
@@ -24,6 +27,13 @@ export interface ActionSheetButton {
   cssClass?: string;
   handler?: () => boolean|void;
 };
+
+@IonicPage({
+
+  segment: 'propertyList'
+})
+
+
 
 @Component({
   selector: 'page-property-list',
@@ -56,6 +66,11 @@ export class PropertyListPage {
 	//  alert(JSON.stringify(property));
     this.navCtrl.push(PropertyDetailPage, { propertyId: property.propertyid });
   }
+   goToTradePanel(property: any) {
+	//  alert(JSON.stringify(property));
+    this.navCtrl.push(TradePanelPage, { propertyId: property.propertyid });
+  }
+
 
   goToPropertyTwitter(property: any) {
     this.inAppBrowser.create(

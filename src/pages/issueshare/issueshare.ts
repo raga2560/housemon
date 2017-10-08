@@ -9,6 +9,8 @@ import { Property } from '../../pages/property-shared/property';
 import { PropertyService } from '../../providers/property.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { PropertyListPage } from '../../pages/property-list/property-list';
+import { PricelistService } from '../../providers/pricelist.service';
+import { Pricelist } from '../../pages/transaction-shared/pricelist';
 
 @Component({
 	selector: 'page-issueshare',
@@ -24,23 +26,28 @@ export class IssueSharePage implements OnInit {
 propertys: any [] = []; //FirebaseListObservable<Property[]>;
 
 property: Property = new Property();
+pricelist: Pricelist = new Pricelist();
 
 showSpinner = true;
 
   constructor(private propertySvc: PropertyService,
-  public navCtrl: NavController
-  ) { }
+  public navCtrl: NavController, 
+  private pricelistserv: PricelistService
+  ) {
+
+  this.property.propertyid = UUID.UUID();;
+  }
 
   ngOnInit() {
 	  
 	  
 
 	
-	
+	/*
 	  this.propertySvc.getPropertysList({ limitToLast: 5 }).subscribe(data=> {
 		this.propertys = data;
 	//	alert(JSON.stringify(this.consents));
-	});
+	}); */
     // this.propertys.subscribe(() => this.showSpinner = false)
   }
    
@@ -48,10 +55,22 @@ showSpinner = true;
   createProperty() {
 	this.property.propertyimage =  "assets/img/house1.jpg";
 	
-	this.property.propertyid = UUID.UUID();;
-    this.propertySvc.createProperty(this.property)
-    this.property = new Property() // reset property
+	
+    this.propertySvc.createProperty(this.property);
+	this.createPricelist();
+	
+   // this.property = new Property() // reset property
 	    this.navCtrl.push(PropertyListPage);
   }
+  createPricelist() {
+	
+	this.pricelist.propertycode =  this.property.propertycode;
+	this.pricelist.propertyid = this.property.propertyid;
+    this.pricelistserv.createPricelist(this.pricelist);
+	
+    
+	   
+  }
+
 
 }

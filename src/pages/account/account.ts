@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { AlertController, NavController } from 'ionic-angular';
 
 import { UserData } from '../../providers/user-data';
+import { AuthService } from '../../providers/auth.service';
 
 
 @Component({
@@ -12,7 +13,11 @@ import { UserData } from '../../providers/user-data';
 export class AccountPage {
   username: string;
 
-  constructor(public alertCtrl: AlertController, public nav: NavController, public userData: UserData) {
+  constructor(public alertCtrl: AlertController, public nav: NavController, public userData: UserData,
+  public auth: AuthService
+        
+         
+  ) {
 
   }
 

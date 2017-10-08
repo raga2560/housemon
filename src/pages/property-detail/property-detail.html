@@ -1,5 +1,72 @@
 
-<ion-content padding *ngIf="propertydetail">
-hello
-  {{propertydetail.title}}
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="propertydetail">{{propertydetail.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content property-list" *ngIf="propertydetail">
+  
+    <ion-grid fixed>
+      <ion-row align-items-stretch>
+
+        <ion-col col-12 col-md-6 align-self-stretch align-self-center  approxItemHeight="457px">
+
+          <ion-card class="property-card">
+            <ion-card-header>
+              
+                <ion-thumbnail item-start>
+                  <img [src]="propertydetail.propertyimage" alt="Property image">
+                </ion-thumbnail>
+                 {{propertydetail.title}} 
+              
+            </ion-card-header>
+
+            <ion-card-content class="outer-content">
+			Description:
+              <ion-list>
+			   
+			   <p> {{propertydetail.propertydesc}} </p>
+                <button ion-button (click)="goToTradePanel(propertydetail)">
+                  <h3>Buy share</h3>
+                </button>
+				<button  ion-button (click)="goToTradePanel(propertydetail)">
+                  <h3>Sell share</h3>
+                </button>
+                
+              </ion-list>
+            </ion-card-content>
+
+            <ion-row no-padding>
+              <ion-col col-12 col-lg-auto text-center text-lg-left>
+                <button ion-button clear small color="primary" icon-start (click)="goToPropertyTwitter(property)">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                  Tweet
+                </button>
+              </ion-col>
+              <ion-col col-12 col-lg-auto text-center>
+                <button ion-button clear small color="primary" icon-start (click)="openPropertyShare(property)">
+                  <ion-icon name='share-alt'></ion-icon>
+                  Share
+                </button>
+              </ion-col>
+              <ion-col col-12 col-lg-auto text-center text-lg-right>
+                <button ion-button clear small color="primary" icon-start (click)="openContact(property)">
+                  <ion-icon name='chatboxes'></ion-icon>
+                  Contact
+                </button>
+              </ion-col>
+            </ion-row>
+
+          </ion-card>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
 </ion-content>
+

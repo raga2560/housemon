@@ -32,6 +32,9 @@ import { SupportPage } from '../pages/support/support';
 import { ConsentService } from '../pages/consents/shared/consent.service';
 import { ItemService } from '../pages/items/shared/item.service';
 import { PropertyService } from '../providers/property.service';
+import { PricelistService } from '../providers/pricelist.service';
+import { TransactionService } from '../providers/transaction.service';
+//import { Pricelist } from '../pages/transaction-shared/pricelist';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -140,6 +143,8 @@ import { UserData } from '../providers/user-data';
 	ConsentService,
 	ItemService,
 	PropertyService,
+	PricelistService,
+	TransactionService,
 	AuthService,
     InAppBrowser,
     SplashScreen

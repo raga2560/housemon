@@ -17,20 +17,26 @@
      <ion-list>
 	
 	<ion-list-header color="light">
-	Buying prices
+	Buying prices    --  (Number of shares)
 	</ion-list-header>
 
 
-  <ion-item *ngFor="let buy of buyingprice">
-    {{buy}}  $
+	<div *ngIf="pricelist">
+  <ion-item *ngFor="let buy of pricelist.buyerprices |slice:0:4" >
+    {{buy.price}}  $  -- (10 )
   </ion-item>
-  
+  </div>
   <ion-item>
   <ion-label color="primary" stacked>Enter buying price</ion-label>
-    <ion-input type="number" placeholder="Enter price as number"></ion-input>
+    <ion-input type="number" [(ngModel)]="newprice.buyingprice" placeholder="Enter price as number"></ion-input>
+	</ion-item>
+<ion-item>
+	<ion-label color="primary" stacked>Enter number of shares</ion-label>
+    <ion-input type="number" [(ngModel)]="newprice.buyingnumber" placeholder="Enter number of shares"></ion-input>
+  
   </ion-item>
   <ion-item>
-<button ion-button block>Buy</button>
+<button ion-button block (click)="enterbuyprice()">Buy</button>
   </ion-item>
      </ion-list>
   
@@ -39,20 +45,29 @@
      <ion-list>
 	
 	<ion-list-header color="light">
-	Selling prices
+	Selling prices    --  (Number of shares)
 	</ion-list-header>
 
-
-  <ion-item *ngFor="let sell of sellingprice">
-    {{sell}}  $
-  </ion-item>
+  <div *ngIf="pricelist">
+  <ion-item *ngFor="let sell of pricelist.sellerprices| slice:0:4"  >
   
+  
+  {{sell.price}}  $  -- (10)
+  
+     
+  </ion-item>
+  </div>
   <ion-item>
   <ion-label color="primary" stacked>Enter selling price</ion-label>
-    <ion-input type="number" placeholder="Enter price as number"></ion-input>
+    <ion-input type="number" [(ngModel)]="newprice.sellingprice" placeholder="Enter price as number"></ion-input>
+  </ion-item>
+  <ion-item >
+	<ion-label color="primary" stacked>Enter number of shares</ion-label>
+    <ion-input type="number" [(ngModel)]="newprice.sellingnumber" placeholder="Enter number of shares"></ion-input>
+  
   </ion-item>
   <ion-item>
-<button ion-button block>Sell</button>
+<button ion-button block (click)="entersellprice()" >Sell</button>
   </ion-item>
   
      </ion-list>

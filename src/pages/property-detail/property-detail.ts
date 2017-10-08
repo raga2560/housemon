@@ -5,6 +5,8 @@ import { PropertyService } from '../../providers/property.service';
 
 import { ConferenceData } from '../../providers/conference-data';
 
+import { TradePanelPage } from '../tradepanel/tradepanel';
+
 
 @IonicPage({
   segment: 'property/:propertyId'
@@ -30,7 +32,7 @@ export class PropertyDetailPage implements OnInit {
 	 this.propertySvc.getPropertysList({ limitToFirst: 1, orderByChild: 'propertyid',
     equalTo: this.navParams.data.propertyId  }).subscribe(data=> {
 		this.propertydetail = data[0];
-		 alert(JSON.stringify(this.propertydetail));
+		// alert(JSON.stringify(this.propertydetail));
 	});
 	
 
@@ -50,6 +52,12 @@ export class PropertyDetailPage implements OnInit {
     });
 */
   }
+  
+     goToTradePanel(property: any) {
+	//  alert(JSON.stringify(property));
+    this.navCtrl.push(TradePanelPage, { propertyId: property.propertyid });
+  }
+
 
   goToSessionDetail(session: any) {
     this.navCtrl.push('SessionDetailPage', { sessionId: session.id });

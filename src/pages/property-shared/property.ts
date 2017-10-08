@@ -5,6 +5,7 @@ export class Property {
   marketvalue: number;
   stocks: number;
   propertyowner: string;
+  propertycode: string;
   propertyownerid: string;
   propertyid:string;
   propertyimage:string;

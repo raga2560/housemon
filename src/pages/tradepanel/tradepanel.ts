@@ -57,14 +57,18 @@ export class TradePanelPage implements OnInit {
 	 this.pricelistservice.getPricelistsList({ limitToFirst: 1, orderByChild: 'propertyid',
     equalTo: this.navParams.data.propertyId  }).subscribe(data=> { 
 		this.pricelist = data[0];
+		if(this.pricelist.sellerprices) {
 			this.pricelist.sellerprices = this.pricelist.sellerprices.sort(function(obj1, obj2){
 				return (obj1.price - obj2.price)
 			});
-			
+		}
+		if(this.pricelist.buyerprices)
+		{
 			this.pricelist.buyerprices = this.pricelist.buyerprices.sort(function(obj1, obj2){
 				
 				return (obj2.price - obj1.price)
 			});
+		}
 		 // alert(JSON.stringify(this.pricelist));
 	});
 	

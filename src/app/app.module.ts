@@ -39,6 +39,7 @@ import { TransactionService } from '../providers/transaction.service';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AuthService } from '../providers/auth.service';
+import { BlockchainService } from '../providers/blockchain.service';
 export const firebaseConfig = environment.firebaseConfig;
 
 // Core
@@ -146,6 +147,7 @@ import { UserData } from '../providers/user-data';
 	PricelistService,
 	TransactionService,
 	AuthService,
+	BlockchainService,
     InAppBrowser,
     SplashScreen
   ]

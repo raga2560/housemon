@@ -60,7 +60,8 @@ showSpinner = true;
 	this.createPricelist();
 	
    // this.property = new Property() // reset property
-	    this.navCtrl.push(PropertyListPage);
+	this.navCtrl.push(PropertyListPage);
+	
   }
   createPricelist() {
 	

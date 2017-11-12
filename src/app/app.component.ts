@@ -22,6 +22,7 @@ import { PropertyListPage } from '../pages/property-list/property-list';
 import { SupportPage } from '../pages/support/support';
 import { ItemsListComponent } from '../pages/items/items-list/items-list.component'  ;
 
+
 import { ConsentListPage } from '../pages/consents/consent-list/consent-list'  ;
 
 

@@ -13,6 +13,7 @@ import {
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import { ConferenceData } from '../../providers/conference-data';
+import { BlockchainService } from '../../providers/blockchain.service';
 
 import { SessionDetailPage } from '../session-detail/session-detail';
 import { PropertyDetailPage } from '../property-detail/property-detail';
@@ -49,8 +50,12 @@ export class PropertyListPage {
     public confData: ConferenceData,
     public config: Config,
 	private propertySvc: PropertyService,
+	public  bcservice: BlockchainService,
     public inAppBrowser: InAppBrowser
-  ) {}
+  ) {
+	  bcservice.send("welcome");
+	  
+  }
 
   ionViewDidLoad() {
     this.propertySvc.getPropertysList().subscribe((propertys: any[]) => {

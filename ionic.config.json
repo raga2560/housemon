@@ -1,5 +1,8 @@
 {
-  "name": "conference",
-  "app_id": "",
-  "type": "ionic-angular"
+  "name": "housemon",
+  "app_id": "99ce0689",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

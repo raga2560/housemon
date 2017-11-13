@@ -26,6 +26,8 @@ The Firebase server reads this data and will interact with "Blockchain server"(h
 
 [Opportunity to create value](https://medium.com/@rameshbn/opportunity-to-create-value-ocv-f112acf236da)
 
+[Real money and Virtual money](https://medium.com/@rameshbn/real-money-and-virtual-money-93b29e503755)
+
 
 
 

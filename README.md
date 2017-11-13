@@ -14,6 +14,8 @@ Theory behind my solutions
 
 [Active and Passive economy](https://medium.com/p/active-and-passive-economy-differences-9be9b1bd1a15)
 
-[Various type of money](https://medium.com/p/a-brief-about-money-banking-crypto-tokens-coins-2e399dc451a1)
+[Various types of money](https://medium.com/p/a-brief-about-money-banking-crypto-tokens-coins-2e399dc451a1)
+
+For all questions of economy refer(https://medium.com/@rameshbn)
 
 

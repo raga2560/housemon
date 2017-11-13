@@ -8,7 +8,7 @@ It stores data in firebase.
 
 The Firebase server reads this data and will interact with "Blockchain server"(https://github.com/raga2560/dcb)
 
-Theory behind my solutions
+# Theory behind my solutions
 
 [Charging india](https://medium.com/p/charging-india-c319ceed74f4)
 

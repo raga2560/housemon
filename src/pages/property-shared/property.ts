@@ -8,6 +8,7 @@ export class Property {
   propertycode: string;
   propertyownerid: string;
   propertyid:string;
+  blockchainassetid: string;
   propertyimage:string;
   active = true;
   timeStamp: number;

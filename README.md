@@ -28,7 +28,7 @@ The Firebase server reads this data and will interact with "Blockchain server"(h
 
 [Real money and Virtual money](https://medium.com/@rameshbn/real-money-and-virtual-money-93b29e503755)
 
-
+[More stuffs](https://raga2560.github.io/economystuffs/)
 
 
 For all questions of economy refer(https://medium.com/@rameshbn)
